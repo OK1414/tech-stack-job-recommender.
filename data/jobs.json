@@ -1,0 +1,27 @@
+
+[
+  {
+    "title": "Backend Developer",
+    "skills": ["Python", "SQL", "Node.js", "Express", "API"]
+  },
+  {
+    "title": "Data Analyst",
+    "skills": ["Python", "SQL", "Excel", "Power BI", "Statistics"]
+  },
+  {
+    "title": "Full Stack Developer",
+    "skills": ["HTML", "CSS", "JavaScript", "React", "Node.js", "SQL"]
+  },
+  {
+    "title": "Python Developer",
+    "skills": ["Python", "SQL", "Django", "API", "Git"]
+  },
+  {
+    "title": "Data Scientist",
+    "skills": ["Python", "SQL", "Statistics", "Machine Learning", "Pandas"]
+  },
+  {
+    "title": "Frontend Developer",
+    "skills": ["HTML", "CSS", "JavaScript", "React", "UI Design"]
+  }
+]

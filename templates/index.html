@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechPath | Job Recommendation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <h2>TechPath</h2>
+        <span>Smart Career Recommendations</span>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <p class="eyebrow">YOUR CAREER, YOUR NEXT STEP</p>
+            <h1>Find the right job profile<br>for your skills.</h1>
+            <p class="subtitle">
+                Enter the technical skills you know. We'll compare them with
+                job profiles and recommend the closest matches.
+            </p>
+
+            <form method="POST" action="/">
+                <label for="skills">Your technical skills</label>
+                <input
+                    type="text"
+                    id="skills"
+                    name="skills"
+                    placeholder="e.g. Python, SQL, HTML, JavaScript"
+                    value="{{ user_skills }}"
+                    required
+                >
+                <p class="hint">Separate each skill with a comma.</p>
+                <button type="submit">Find My Job Matches →</button>
+            </form>
+        </section>
+
+        {% if recommendations %}
+        <section class="results">
+            <h2>Your recommended job profiles</h2>
+            <p class="results-intro">
+                Profiles are ranked by the percentage of required skills you match.
+            </p>
+
+            <div class="job-grid">
+                {% for job in recommendations %}
+                <article class="job-card">
+                    <div class="card-top">
+                        <h3>{{ job.title }}</h3>
+                        <span class="score">{{ job.score }}%</span>
+                    </div>
+
+                    <p class="job-description">{{ job.description }}</p>
+
+                    <div class="progress-track">
+                        <div class="progress-fill"
+                             style="width: {{ job.score }}%">
+                        </div>
+                    </div>
+
+                    <h4>Matching skills</h4>
+                    {% if job.matched_skills %}
+                    <div class="skill-list">
+                        {% for skill in job.matched_skills %}
+                        <span class="skill matched">{{ skill }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <p class="empty-message">No matching skills yet.</p>
+                    {% endif %}
+
+                    <h4>Skills to learn</h4>
+                    {% if job.missing_skills %}
+                    <div class="skill-list">
+                        {% for skill in job.missing_skills %}
+                        <span class="skill missing">{{ skill }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <p class="empty-message">You match all listed skills!</p>
+                    {% endif %}
+                </article>
+                {% endfor %}
+            </div>
+        </section>
+        {% elif request.method == "POST" %}
+        <section class="no-results">
+            <h2>No recommendations found</h2>
+            <p>Please enter at least one skill and try again.</p>
+        </section>
+        {% endif %}
+    </main>
+
+    <footer>
+        <p>TechPath · Built with Python, Flask and recommendation logic</p>
+        <p class="disclaimer">
+            Match percentages compare your skills with the sample profiles.
+            They do not guarantee job eligibility or employment.
+        </p>
+    </footer>
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</body>
+</html>

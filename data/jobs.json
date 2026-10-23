@@ -2,26 +2,32 @@
 [
   {
     "title": "Backend Developer",
-    "skills": ["Python", "SQL", "Node.js", "Express", "API"]
+    "description": "Builds server-side applications, APIs, and business logic.",
+    "skills": ["Python", "SQL", "Node.js", "Express", "REST API", "Git"]
   },
   {
     "title": "Data Analyst",
-    "skills": ["Python", "SQL", "Excel", "Power BI", "Statistics"]
+    "description": "Analyzes data and creates reports and dashboards.",
+    "skills": ["Python", "SQL", "Excel", "Power BI", "Statistics", "Tableau"]
   },
   {
     "title": "Full Stack Developer",
-    "skills": ["HTML", "CSS", "JavaScript", "React", "Node.js", "SQL"]
+    "description": "Builds frontend interfaces and backend applications.",
+    "skills": ["HTML", "CSS", "JavaScript", "React", "Node.js", "SQL", "Git"]
   },
   {
     "title": "Python Developer",
-    "skills": ["Python", "SQL", "Django", "API", "Git"]
+    "description": "Develops applications and services using Python.",
+    "skills": ["Python", "SQL", "Django", "REST API", "Git", "Testing"]
   },
   {
     "title": "Data Scientist",
-    "skills": ["Python", "SQL", "Statistics", "Machine Learning", "Pandas"]
+    "description": "Uses statistics and machine learning to find patterns in data.",
+    "skills": ["Python", "SQL", "Statistics", "Machine Learning", "Pandas", "NumPy"]
   },
   {
     "title": "Frontend Developer",
-    "skills": ["HTML", "CSS", "JavaScript", "React", "UI Design"]
+    "description": "Builds the user interface and interactive web experiences.",
+    "skills": ["HTML", "CSS", "JavaScript", "React", "UI Design", "Git"]
   }
 ]
